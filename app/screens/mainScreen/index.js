@@ -7,17 +7,17 @@ import {db} from '../../firebase/firebase';
 const MainScreen = () => {
   const updateData = name => {
     db();
-    const newReference = database()
-      .ref(`/logins/test/${name}`)
-      .push();
-    newReference.set({name: name, password: '123456'});
-    console.log('Data Inserted from mainscreen');
-    // database()
-    //   .ref('/logins/test')
-    //   .once('value')
-    //   .then(snapshot => {
-    //     console.log('My read Name=', snapshot.val());
-    //   });
+    // const newReference = database()
+    //   .ref(`/newusers/logins/${name}`)
+    //   .push();
+    // newReference.set({name: name, password: '123456'});
+    // console.log('Data Inserted from mainscreen');
+     database()
+       .ref('/logins/test/Hello')
+       .once('value')
+       .then(snapshot => {
+         console.log('My read Name=', snapshot.val());
+       });
   };
 
   return (
